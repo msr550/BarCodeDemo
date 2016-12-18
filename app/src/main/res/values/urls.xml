@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sample_merchant_id_staging">WorldP64425807474247</string>
+    <string name="sample_checksum_generation_url">https://pguat.paytm.com/merchant-chksum/ChecksumGenerator</string>
+    <string name="sample_checksum_verification_url">https://pguat.paytm.com/merchant-chksum/ValidateChksum</string>
+</resources>

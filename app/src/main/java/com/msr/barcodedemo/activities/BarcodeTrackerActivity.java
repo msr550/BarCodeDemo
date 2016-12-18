@@ -146,7 +146,7 @@ public final class BarcodeTrackerActivity extends AppCompatActivity {
             @Override
             public void onBarcodeDetected(Barcode barCodeCaptured) {
                 Intent resultIntent = new Intent();
-                resultIntent.putExtra("barcode", barCodeCaptured.rawValue);
+                resultIntent.putExtra(getString(R.string.bundle_barcode), barCodeCaptured.rawValue);
                 setResult(Activity.RESULT_OK, resultIntent);
                 finish();
             }
