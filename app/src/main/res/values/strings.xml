@@ -3,7 +3,7 @@
     <string name="ok">OK</string>
     <string name="permission_camera_rationale">Access to the camera is needed for detection</string>
     <string name="no_camera_permission">This application cannot run because it does not have the camera permission.  The application will now exit.</string>
-    <string name="title_activity_main">VISION API</string>
+    <string name="title_activity_main">Bar Code Scanner</string>
 
     <!--paytm-->
     <string name="product_code">Product Code : </string>
