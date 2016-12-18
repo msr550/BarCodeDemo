@@ -1,5 +1,6 @@
 package com.msr.barcodedemo.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -21,6 +22,8 @@ import java.util.Random;
 
 public class PaymentActivity extends AppCompatActivity {
 
+    private TextView productCodeTV;
+
     public static void getLogInfo(String message) {
         Log.i("===Info===", "===" + message + "===");
     }
@@ -30,7 +33,7 @@ public class PaymentActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
-        TextView productCodeTV = (TextView) findViewById(R.id.productCodeTV);
+        productCodeTV = (TextView) findViewById(R.id.productCodeTV);
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             String barCode = bundle.getString(getString(R.string.bundle_barcode));
@@ -43,6 +46,19 @@ public class PaymentActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);
+    }
+
+    public void reScan(View view) {
+        startActivityForResult(new Intent(this, BarcodeTrackerActivity.class), 1000);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1000 && resultCode == RESULT_OK) {
+            String barcode = data.getExtras().getString(getString(R.string.bundle_barcode));
+            productCodeTV.setText(barcode);
+        }
     }
 
     public void onStartTransaction(View view) {

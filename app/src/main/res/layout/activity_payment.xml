@@ -29,7 +29,6 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="5dp"
             android:layout_weight="0.55"
-            android:text="lklkslkb"
             android:textSize="15sp"
             android:textStyle="bold|italic" />
 
@@ -68,6 +67,19 @@
         android:layout_marginTop="10dip"
         android:onClick="onStartTransaction"
         android:text="@string/start_transaction"
-        android:textSize="16dip"
+        android:textSize="16sp"
         android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/rescan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dip"
+        android:onClick="reScan"
+        android:text="@string/rescan"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
 </LinearLayout>
